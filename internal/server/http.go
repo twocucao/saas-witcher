@@ -1,14 +1,13 @@
 package server
 
 import (
-	v1 "sass-witcher/api/helloworld/v1"
-	"sass-witcher/saas-core/conf"
-	"sass-witcher/saas-core/service"
 	"github.com/go-kratos/kratos/v2/middleware"
 	"github.com/go-kratos/kratos/v2/middleware/logging"
 	"github.com/go-kratos/kratos/v2/middleware/recovery"
 	"github.com/go-kratos/kratos/v2/middleware/tracing"
 	"github.com/go-kratos/kratos/v2/transport/http"
+	"github.com/twocucao/saas-witcher/internal/conf"
+	"github.com/twocucao/saas-witcher/internal/service"
 )
 
 // NewHTTPServer new a HTTP server.
@@ -24,13 +23,13 @@ func NewHTTPServer(c *conf.Server, greeter *service.GreeterService) *http.Server
 		opts = append(opts, http.Timeout(c.Http.Timeout.AsDuration()))
 	}
 	srv := http.NewServer(opts...)
-	m := http.Middleware(
+	http.Middleware(
 		middleware.Chain(
 			recovery.Recovery(),
 			tracing.Server(),
 			logging.Server(),
 		),
 	)
-	srv.HandlePrefix("/", v1.NewGreeterHandler(greeter, m))
+	//srv.HandlePrefix("/", v1.NewGreeterHandler(greeter, m))
 	return srv
 }

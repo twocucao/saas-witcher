@@ -1,8 +1,8 @@
 package data
 
 import (
-	"sass-witcher/saas-core/conf"
 	"github.com/google/wire"
+	"github.com/twocucao/saas-witcher/internal/conf"
 )
 
 // ProviderSet is data providers.

@@ -1,7 +1,7 @@
 syntax = "proto3";
 package kratos.api;
 
-option go_package = "sass-witcher/saas-core/conf;conf";
+option go_package = "sass-witcher/internal/conf;conf";
 
 import "google/protobuf/duration.proto";
 
