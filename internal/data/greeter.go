@@ -1,7 +1,8 @@
 package data
 
 import (
-	"sass-witcher/saas-core/biz"
+	"saas-witcher/saas-core/biz"
+
 	"github.com/go-kratos/kratos/v2/log"
 )
 
