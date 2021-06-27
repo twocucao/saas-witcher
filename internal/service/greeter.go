@@ -3,8 +3,9 @@ package service
 import (
 	"context"
 
-	v1 "sass-witcher/api/helloworld/v1"
-	"sass-witcher/saas-core/biz"
+	v1 "saas-witcher/api/helloworld/v1"
+	"saas-witcher/saas-core/biz"
+
 	"github.com/go-kratos/kratos/v2/errors"
 	"github.com/go-kratos/kratos/v2/log"
 )
